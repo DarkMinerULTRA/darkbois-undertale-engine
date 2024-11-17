@@ -39,7 +39,7 @@ func _process(delta):
 		particle.position.y = int(ylevel) - (image_height / 2)
 		particle.process_material.set("shader_parameter/scrolly",(1.0/image_height)*int(ylevel))
 		self.material.set("shader_parameter/sensitivity",(1.0/image_height)*int(ylevel))
-	else:
+	elif started:
 		particle.emitting = false
 		await get_tree().create_timer(50).timeout
 		queue_free()
