@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://f6j1f82svb2m"]
+
+[ext_resource type="Script" path="res://objects/attacks/flyingmushroom.gd" id="1_tkup3"]
+[ext_resource type="Texture2D" uid="uid://b1pdk3ijmb3e" path="res://assets/sprites/battle/attacks/smallmushroom.png" id="2_7wjd7"]
+[ext_resource type="PackedScene" uid="uid://b1p2bx7cnxouj" path="res://objects/obj_attack.tscn" id="2_vncas"]
+
+[node name="attack" type="Node2D"]
+script = ExtResource("1_tkup3")
+
+[node name="Attacks" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
+
+[node name="Attack" parent="." instance=ExtResource("2_vncas")]
+position = Vector2(50, 50)
+texture = ExtResource("2_7wjd7")

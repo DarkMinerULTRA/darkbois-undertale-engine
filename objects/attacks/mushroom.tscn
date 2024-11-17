@@ -1,0 +1,32 @@
+[gd_scene load_steps=4 format=3 uid="uid://de1s222yxmdti"]
+
+[ext_resource type="Script" path="res://objects/attacks/scr_mushroom.gd" id="1_56y5l"]
+[ext_resource type="PackedScene" uid="uid://b1p2bx7cnxouj" path="res://objects/obj_attack.tscn" id="1_e5fiq"]
+[ext_resource type="Texture2D" uid="uid://x5xswt11xn84" path="res://assets/sprites/battle/attacks/mushroom.png" id="2_vjfn2"]
+
+[node name="attack" type="Node2D"]
+script = ExtResource("1_56y5l")
+
+[node name="Attacks" type="Control" parent="."]
+clip_contents = true
+layout_mode = 3
+anchors_preset = 0
+offset_left = -33.0
+offset_top = -33.0
+offset_right = 33.0
+offset_bottom = 33.0
+
+[node name="Attack" parent="Attacks" instance=ExtResource("1_e5fiq")]
+position = Vector2(50, 109)
+scale = Vector2(0.97561, 1)
+texture = ExtResource("2_vjfn2")
+attackType = 1
+
+[node name="Attack2" parent="Attacks" instance=ExtResource("1_e5fiq")]
+position = Vector2(31, 109)
+texture = ExtResource("2_vjfn2")
+
+[node name="Attack3" parent="Attacks" instance=ExtResource("1_e5fiq")]
+position = Vector2(12, 109)
+scale = Vector2(0.97561, 1)
+texture = ExtResource("2_vjfn2")

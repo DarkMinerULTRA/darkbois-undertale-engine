@@ -1,0 +1,55 @@
+[gd_scene load_steps=5 format=3 uid="uid://dlryk1t7ch65i"]
+
+[ext_resource type="Script" path="res://scripts/scr_title1.gd" id="1_km7cj"]
+[ext_resource type="Texture2D" uid="uid://dfbo1ffli32fu" path="res://assets/sprites/other/spr_undertaletitle_0.png" id="1_w26at"]
+[ext_resource type="AudioStream" uid="uid://f3drxvudcyhp" path="res://assets/sounds/mus_intronoise.ogg" id="2_rb8pb"]
+[ext_resource type="FontFile" uid="uid://cxylwu58bk4hg" path="res://assets/fonts/crypt-of-tomorrow-ut-font-no-rus.ttf" id="3_ww5c3"]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_km7cj")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(160, 120)
+texture = ExtResource("1_w26at")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_rb8pb")
+autoplay = true
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 85.0
+offset_top = 85.0
+offset_right = 235.0
+offset_bottom = 100.0
+theme_override_colors/font_color = Color(0.282353, 0.282353, 0.282353, 1)
+theme_override_fonts/font = ExtResource("3_ww5c3")
+theme_override_font_sizes/font_size = 12
+text = "DARKBOI'S"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="."]
+texture_filter = 1
+offset_left = 85.0
+offset_top = 151.0
+offset_right = 235.0
+offset_bottom = 175.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_fonts/font = ExtResource("3_ww5c3")
+theme_override_font_sizes/font_size = 20
+text = "ENGINE"
+horizontal_alignment = 1
+
+[node name="Label3" type="Label" parent="."]
+visible = false
+texture_filter = 1
+offset_left = 40.0
+offset_top = 209.0
+offset_right = 280.0
+offset_bottom = 224.0
+theme_override_colors/font_color = Color(0.282353, 0.282353, 0.282353, 1)
+theme_override_fonts/font = ExtResource("3_ww5c3")
+theme_override_font_sizes/font_size = 6
+text = "[press z or enter]"
+horizontal_alignment = 1

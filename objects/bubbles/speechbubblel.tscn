@@ -1,0 +1,28 @@
+[gd_scene load_steps=4 format=3 uid="uid://cyfnd7p03p2ph"]
+
+[ext_resource type="Script" path="res://scripts/scr_monstertalk.gd" id="1_vw2kg"]
+[ext_resource type="Texture2D" uid="uid://dtw3gv3a3eiis" path="res://assets/sprites/battle/bubbles/spr_blconsm_0.png" id="2_h2wog"]
+[ext_resource type="FontFile" uid="uid://cx2k2eaadae28" path="res://assets/fonts/undertale-dotumche.otf" id="2_y0qrj"]
+
+[node name="speechbubble" type="Node2D"]
+script = ExtResource("1_vw2kg")
+
+[node name="SprBlconsm0" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_h2wog")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = -27.0
+offset_top = -46.0
+offset_right = 48.0
+offset_bottom = 4.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("2_y0qrj")
+theme_override_font_sizes/font_size = 6
+text = "the noses have
+reached the
+free range
+denim"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]

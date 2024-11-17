@@ -1,0 +1,398 @@
+[gd_scene load_steps=32 format=3 uid="uid://db50dbx012b54"]
+
+[ext_resource type="Script" path="res://scripts/scr_player.gd" id="1_hyy0b"]
+[ext_resource type="Texture2D" uid="uid://duc3te85j7qx8" path="res://assets/sprites/mainchara/sheet.png" id="2_ckbt5"]
+[ext_resource type="FontFile" uid="uid://cxylwu58bk4hg" path="res://assets/fonts/crypt-of-tomorrow-ut-font-no-rus.ttf" id="8_jqoac"]
+[ext_resource type="Texture2D" uid="uid://vy8x8rd6ij1" path="res://assets/sprites/overworld/spr_heartsmall_0.png" id="10_3cmjv"]
+[ext_resource type="Texture2D" uid="uid://0wxle17dqts" path="res://assets/sprites/overworld/spr_exc_0.png" id="12_80ric"]
+[ext_resource type="AudioStream" uid="uid://b4ylbgfy0s63l" path="res://assets/sounds/snd_b.wav" id="12_fm8a3"]
+[ext_resource type="PackedScene" uid="uid://bl1mx4aqc42po" path="res://objects/ui_box.tscn" id="14_ee4ew"]
+[ext_resource type="Script" path="res://scripts/scr_menu.gd" id="14_ttlwt"]
+[ext_resource type="Script" path="res://scripts/scr_set_text_to_savedata.gd" id="15_7y3xu"]
+[ext_resource type="FontFile" uid="uid://c3rgkrclcqocg" path="res://assets/fonts/DTM-Sans.otf" id="16_t8f6k"]
+[ext_resource type="FontFile" uid="uid://d0lg6tdg5vcrf" path="res://assets/fonts/DTM-Mono.otf" id="17_0cg3k"]
+[ext_resource type="Script" path="res://scripts/scr_hp.gd" id="17_jixnt"]
+[ext_resource type="AudioStream" uid="uid://biqj6gdnevf8m" path="res://assets/sounds/snd_squeak.wav" id="21_yinll"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_aky46"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(20, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cxd05"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(40, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ug8ey"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(60, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_a7kfe"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(0, 0, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_is6dj"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(20, 60, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_n77od"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(0, 60, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eifhr"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(60, 60, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5jwld"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(40, 60, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_cvrkb"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(20, 30, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gos47"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(40, 30, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ye6bh"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(60, 30, 20, 30)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_0fhfh"]
+atlas = ExtResource("2_ckbt5")
+region = Rect2(0, 30, 20, 30)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0ctb7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_aky46")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cxd05")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ug8ey")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_a7kfe")
+}],
+"loop": true,
+"name": &"down",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_is6dj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_n77od")
+}],
+"loop": true,
+"name": &"left",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eifhr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5jwld")
+}],
+"loop": true,
+"name": &"right",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_cvrkb")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gos47")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ye6bh")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_0fhfh")
+}],
+"loop": true,
+"name": &"up",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k7tir"]
+size = Vector2(20, 15)
+
+[sub_resource type="FontVariation" id="FontVariation_0bded"]
+spacing_glyph = -1
+spacing_space = -1
+spacing_bottom = -4
+
+[sub_resource type="LabelSettings" id="LabelSettings_8grh4"]
+font = SubResource("FontVariation_0bded")
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_6iept"]
+font_size = 13
+
+[sub_resource type="LabelSettings" id="LabelSettings_edsh8"]
+font = ExtResource("8_jqoac")
+font_size = 5
+
+[node name="player" type="CharacterBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_hyy0b")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_0ctb7")
+animation = &"down"
+autoplay = "down"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 8)
+shape = SubResource("RectangleShape2D_k7tir")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+script = ExtResource("14_ttlwt")
+
+[node name="UiBox" parent="CanvasLayer" instance=ExtResource("14_ee4ew")]
+position = Vector2(51, 55)
+size = Vector2(70, 54)
+
+[node name="UiBox3" parent="CanvasLayer" instance=ExtResource("14_ee4ew")]
+position = Vector2(51, 121)
+size = Vector2(70, 75)
+
+[node name="UiBox2" parent="CanvasLayer" instance=ExtResource("14_ee4ew")]
+position = Vector2(180, 116)
+size = Vector2(171, 180)
+
+[node name="Label7" type="Label" parent="CanvasLayer/UiBox2"]
+texture_filter = 1
+offset_left = -64.0
+offset_top = -75.0
+offset_right = 22.0
+offset_bottom = -21.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "Monster Candy
+Innocent Soul
+Rapier
+Test
+Funny!
+Insert Item Here
+IP Tracker
+123.456.789.000"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="USE" type="Label" parent="CanvasLayer/UiBox2"]
+texture_filter = 1
+offset_left = -65.0
+offset_top = 66.0
+offset_right = 21.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("17_0cg3k")
+theme_override_font_sizes/font_size = 12
+text = "USE"
+
+[node name="INFO" type="Label" parent="CanvasLayer/UiBox2"]
+texture_filter = 1
+offset_left = -16.0
+offset_top = 66.0
+offset_right = 70.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("17_0cg3k")
+theme_override_font_sizes/font_size = 12
+text = "INFO"
+
+[node name="DROP" type="Label" parent="CanvasLayer/UiBox2"]
+texture_filter = 1
+offset_left = 39.0
+offset_top = 66.0
+offset_right = 125.0
+offset_bottom = 120.0
+theme_override_fonts/font = ExtResource("17_0cg3k")
+theme_override_font_sizes/font_size = 12
+text = "DROP"
+
+[node name="UiBox4" parent="CanvasLayer" instance=ExtResource("14_ee4ew")]
+position = Vector2(180, 130)
+size = Vector2(171, 207)
+
+[node name="Label8" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = -73.0
+offset_top = -88.0
+offset_right = 13.0
+offset_bottom = -27.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "\"Papyru\""
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label10" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = -73.0
+offset_top = -90.0
+offset_right = 13.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "
+
+LV 8
+HP 48 
+
+AT 14(5)
+DF 1(0)"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label14" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = -27.0
+offset_top = -42.0
+offset_right = 59.0
+offset_bottom = 67.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "48"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label11" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = 11.0
+offset_top = -10.0
+offset_right = 97.0
+offset_bottom = 51.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "EXP:541
+NEXT:259"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label12" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = -73.0
+offset_top = 36.0
+offset_right = 58.0
+offset_bottom = 97.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "WEAPON:Tough Glove
+ARMOR:Bandage
+"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label13" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = -73.0
+offset_top = 72.0
+offset_right = 85.0
+offset_bottom = 133.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "GOLD: 404   KILLS:35"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label9" type="Label" parent="CanvasLayer/UiBox4"]
+texture_filter = 1
+offset_left = -36.0
+offset_top = -42.0
+offset_right = 50.0
+offset_bottom = 19.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "/"
+label_settings = SubResource("LabelSettings_8grh4")
+
+[node name="Label" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 22.0
+offset_top = 30.0
+offset_right = 77.0
+offset_bottom = 48.0
+theme_override_font_sizes/font_size = 13
+text = "Frisk"
+label_settings = SubResource("LabelSettings_6iept")
+script = ExtResource("15_7y3xu")
+dataName = "name"
+
+[node name="Label2" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 51.0
+offset_right = 79.0
+offset_bottom = 69.0
+text = "lv 1"
+label_settings = SubResource("LabelSettings_edsh8")
+script = ExtResource("15_7y3xu")
+prefix = "lv "
+dataName = "lv"
+
+[node name="Label3" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 59.0
+offset_right = 79.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 13
+text = "hp
+"
+label_settings = SubResource("LabelSettings_edsh8")
+
+[node name="Label4" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 40.0
+offset_top = 59.0
+offset_right = 95.0
+offset_bottom = 77.0
+theme_override_font_sizes/font_size = 13
+text = "20/20"
+label_settings = SubResource("LabelSettings_edsh8")
+script = ExtResource("17_jixnt")
+
+[node name="Label6" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 43.0
+offset_top = 95.0
+offset_right = 129.0
+offset_bottom = 149.0
+theme_override_fonts/font = ExtResource("16_t8f6k")
+theme_override_font_sizes/font_size = 12
+text = "ITEM
+STAT
+CELL"
+
+[node name="Label5" type="Label" parent="CanvasLayer"]
+texture_filter = 1
+offset_left = 24.0
+offset_top = 68.0
+offset_right = 79.0
+offset_bottom = 86.0
+text = "g 999"
+label_settings = SubResource("LabelSettings_edsh8")
+script = ExtResource("15_7y3xu")
+prefix = "g "
+dataName = "g"
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="CanvasLayer"]
+stream = ExtResource("21_yinll")
+
+[node name="Sprite2D" type="Sprite2D" parent="CanvasLayer"]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+position = Vector2(37.5, 135.5)
+texture = ExtResource("10_3cmjv")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("21_yinll")
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_fm8a3")
+
+[node name="bubble" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(0, -20)
+texture = ExtResource("12_80ric")

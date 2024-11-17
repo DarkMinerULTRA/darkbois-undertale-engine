@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://b1p2bx7cnxouj"]
+
+[ext_resource type="Script" path="res://scripts/scr_attack.gd" id="1_m5j1d"]
+[ext_resource type="Script" path="res://rooms/scr_attack_collision.gd" id="1_n0o4a"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jcmpt"]
+
+[node name="Attack" type="Sprite2D"]
+texture_filter = 1
+script = ExtResource("1_m5j1d")
+
+[node name="attack" type="Area2D" parent="."]
+script = ExtResource("1_n0o4a")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="attack"]
+shape = SubResource("RectangleShape2D_jcmpt")

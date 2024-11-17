@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://brbnqh4caynjm"]
+
+[ext_resource type="Script" path="res://scripts/scr_dead.gd" id="1_foo8y"]
+[ext_resource type="Texture2D" uid="uid://bpppqu7yy457d" path="res://assets/sprites/battle/spr_heart_1.png" id="2_2y5jj"]
+[ext_resource type="Texture2D" uid="uid://dvtumll04jv7y" path="res://assets/sprites/battle/spr_heartshards_1.png" id="3_wh0e0"]
+[ext_resource type="AudioStream" uid="uid://7768avmvweca" path="res://assets/music/mus_gameover.ogg" id="3_x5jy0"]
+[ext_resource type="Texture2D" uid="uid://q1rprkb71mvn" path="res://assets/sprites/battle/spr_heartshards_2.png" id="4_hifla"]
+[ext_resource type="Texture2D" uid="uid://d2a8or6uny4ar" path="res://assets/sprites/battle/spr_heartshards_3.png" id="5_xgiui"]
+[ext_resource type="Texture2D" uid="uid://dub4h0d4nfp5b" path="res://assets/sprites/battle/spr_heartshards_4.png" id="6_mbmyx"]
+[ext_resource type="Script" path="res://scripts/scr_soulpiece.gd" id="7_jd1vq"]
+[ext_resource type="Texture2D" uid="uid://fer5pf22iau3" path="res://assets/sprites/other/spr_gameoverbg_0.png" id="9_qeu0n"]
+[ext_resource type="FontFile" uid="uid://d0lg6tdg5vcrf" path="res://assets/fonts/DTM-Mono.otf" id="10_pu2om"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_teaq5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wh0e0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hifla")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_xgiui")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_mbmyx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_qddl4"]
+font = ExtResource("10_pu2om")
+font_size = 13
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_foo8y")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("2_2y5jj")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(160, 120)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_teaq5")
+autoplay = "default"
+frame_progress = 0.459139
+script = ExtResource("7_jd1vq")
+
+[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(160, 120)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_teaq5")
+autoplay = "default"
+frame = 1
+script = ExtResource("7_jd1vq")
+
+[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(160, 120)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_teaq5")
+autoplay = "default"
+frame = 2
+script = ExtResource("7_jd1vq")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("3_x5jy0")
+
+[node name="SprGameoverbg0" type="Sprite2D" parent="."]
+modulate = Color(1, 1, 1, 0)
+texture_filter = 1
+position = Vector2(160, 60)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("9_qeu0n")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 63.0
+offset_top = 157.0
+offset_right = 351.0
+offset_bottom = 200.0
+label_settings = SubResource("LabelSettings_qddl4")

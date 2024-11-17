@@ -1,0 +1,83 @@
+[gd_scene load_steps=11 format=3 uid="uid://bxoe1kb20wetv"]
+
+[ext_resource type="Script" path="res://objects/enemies/obj_shroomy.gd" id="1_t6fk4"]
+[ext_resource type="Texture2D" uid="uid://c4ov6ilebngyq" path="res://assets/sprites/battle/enemies/shroom_new_body.png" id="2_rpt40"]
+[ext_resource type="Texture2D" uid="uid://t2w2ik5ob8sh" path="res://assets/sprites/battle/enemies/shroom_new_head.png" id="3_6ve17"]
+[ext_resource type="Shader" path="res://shader/dissapear.gdshader" id="3_a0ero"]
+[ext_resource type="Texture2D" uid="uid://dctf4myql6xim" path="res://assets/sprites/battle/enemies/shroom_new_hurt.png" id="5_5c3j8"]
+[ext_resource type="Shader" path="res://shader/dust.gdshader" id="5_nwc8w"]
+[ext_resource type="Script" path="res://scripts/scr_vaporise_better.gd" id="5_y6koi"]
+[ext_resource type="Texture2D" uid="uid://y5s7equ0vvor" path="res://assets/sprites/battle/enemies/shroom_new_spare.png" id="8_j34hh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_uuj0i"]
+shader = ExtResource("3_a0ero")
+shader_parameter/sensitivity = 0.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_nc2tn"]
+shader = ExtResource("5_nwc8w")
+shader_parameter/direction = null
+shader_parameter/spread = 5.0
+shader_parameter/initial_linear_velocity_min = 30.0
+shader_parameter/initial_linear_velocity_max = 30.0
+shader_parameter/initial_angle_min = null
+shader_parameter/initial_angle_max = 0.0
+shader_parameter/angular_velocity_min = 0.0
+shader_parameter/angular_velocity_max = 0.0
+shader_parameter/linear_accel_min = 15.0
+shader_parameter/linear_accel_max = 15.0
+shader_parameter/radial_accel_min = 0.0
+shader_parameter/radial_accel_max = 0.0
+shader_parameter/tangent_accel_min = null
+shader_parameter/tangent_accel_max = 0.0
+shader_parameter/scale_min = 1.0
+shader_parameter/scale_max = 1.0
+shader_parameter/lifetime_randomness = null
+shader_parameter/emission_box_extents = Vector3(27, 0, 1)
+shader_parameter/scrolly = null
+
+[node name="Enemy" type="Node2D"]
+script = ExtResource("1_t6fk4")
+
+[node name="Normal" type="Node2D" parent="."]
+texture_filter = 1
+use_parent_material = true
+scale = Vector2(0.75, 0.75)
+
+[node name="Sprite2D2" type="Sprite2D" parent="Normal"]
+texture_filter = 1
+use_parent_material = true
+position = Vector2(0, 64)
+texture = ExtResource("2_rpt40")
+offset = Vector2(0, -64)
+
+[node name="Sprite2D" type="Sprite2D" parent="Normal"]
+texture_filter = 1
+use_parent_material = true
+texture = ExtResource("3_6ve17")
+
+[node name="Hurt" type="Node2D" parent="."]
+visible = false
+use_parent_material = true
+scale = Vector2(0.75, 0.75)
+
+[node name="Sprite2D" type="Sprite2D" parent="Hurt"]
+texture_filter = 1
+material = SubResource("ShaderMaterial_uuj0i")
+texture = ExtResource("5_5c3j8")
+script = ExtResource("5_y6koi")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Hurt/Sprite2D"]
+emitting = false
+amount = 1024
+amount_ratio = 0.2955
+process_material = SubResource("ShaderMaterial_nc2tn")
+
+[node name="Spare" type="Node2D" parent="."]
+visible = false
+use_parent_material = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Spare"]
+modulate = Color(1, 1, 1, 0.25)
+texture_filter = 1
+scale = Vector2(0.75, 0.75)
+texture = ExtResource("8_j34hh")

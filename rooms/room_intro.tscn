@@ -1,0 +1,41 @@
+[gd_scene load_steps=8 format=3 uid="uid://dxdaynvuixacl"]
+
+[ext_resource type="FontFile" uid="uid://d0lg6tdg5vcrf" path="res://assets/fonts/DTM-Mono.otf" id="1_axdtt"]
+[ext_resource type="Script" path="res://scripts/scr_story.gd" id="1_rixwe"]
+[ext_resource type="Texture2D" uid="uid://3r5d73e4bcn6" path="res://assets/sprites/intro/spr_introimage_0.png" id="2_oxcf6"]
+[ext_resource type="AudioStream" uid="uid://3gjgicrsr2te" path="res://assets/music/mus_story.ogg" id="2_yj18o"]
+[ext_resource type="AudioStream" uid="uid://bjjjmrnpddwwd" path="res://assets/sounds/SND_TXT2.wav" id="4_7d6f7"]
+
+[sub_resource type="FontVariation" id="FontVariation_gdxf0"]
+base_font = ExtResource("1_axdtt")
+spacing_glyph = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_fl7gd"]
+font = SubResource("FontVariation_gdxf0")
+font_size = 13
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_rixwe")
+
+[node name="image" type="Sprite2D" parent="."]
+texture = ExtResource("2_oxcf6")
+centered = false
+
+[node name="Label" type="Label" parent="."]
+offset_left = 55.0
+offset_top = 160.0
+offset_right = 266.0
+offset_bottom = 240.0
+text = "Long ago, two races
+ruled over Earth:
+HUMANS and MONSTERS."
+label_settings = SubResource("LabelSettings_fl7gd")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_yj18o")
+pitch_scale = 0.91
+autoplay = true
+
+[node name="txtsound" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_7d6f7")
+pitch_scale = 0.91

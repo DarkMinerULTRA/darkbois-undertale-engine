@@ -1,0 +1,63 @@
+[gd_scene load_steps=10 format=3 uid="uid://bgc4f388pbkkh"]
+
+[ext_resource type="Texture2D" uid="uid://ct5yme1qgwlxa" path="res://assets/sprites/npcs/spr_smallfrog_0.png" id="1_bo43k"]
+[ext_resource type="Script" path="res://scripts/scr_npc.gd" id="1_v6j0j"]
+[ext_resource type="Texture2D" uid="uid://b601a33sr8504" path="res://assets/sprites/npcs/spr_smallfrog_1.png" id="2_ptwi0"]
+[ext_resource type="Texture2D" uid="uid://ccvqqybtgpyim" path="res://assets/sprites/npcs/spr_smallfrog_2.png" id="3_igdob"]
+[ext_resource type="Texture2D" uid="uid://ctbbyu8ecck7i" path="res://assets/sprites/npcs/spr_smallfrog_3.png" id="4_bf6i6"]
+[ext_resource type="Texture2D" uid="uid://djs3upg80vlgt" path="res://assets/sprites/npcs/spr_shroomy.png" id="6_ykbfq"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kgdkv"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_bo43k")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_ptwi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_igdob")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_bf6i6")
+}],
+"loop": true,
+"name": &"froggit",
+"speed": 4.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_ykbfq")
+}],
+"loop": true,
+"name": &"shroomy",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_48m3v"]
+size = Vector2(20, 10)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_mrcpe"]
+size = Vector2(22, 13)
+
+[node name="npc" type="StaticBody2D"]
+y_sort_enabled = true
+script = ExtResource("1_v6j0j")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_kgdkv")
+animation = &"shroomy"
+autoplay = "froggit"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 5)
+shape = SubResource("RectangleShape2D_48m3v")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, 5)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(0, 0.5)
+shape = SubResource("RectangleShape2D_mrcpe")

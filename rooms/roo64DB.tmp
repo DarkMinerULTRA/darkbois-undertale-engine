@@ -1,0 +1,714 @@
+[gd_scene load_steps=54 format=3 uid="uid://tqlkx4lstqsc"]
+
+[ext_resource type="Script" path="res://scripts/scr_BattleDialog.gd" id="1_4dtdt"]
+[ext_resource type="Script" path="res://scripts/scr_battle.gd" id="1_57xde"]
+[ext_resource type="FontFile" uid="uid://d0lg6tdg5vcrf" path="res://assets/fonts/DTM-Mono.otf" id="2_ngf0v"]
+[ext_resource type="Texture2D" uid="uid://b4if6gpi5qd4" path="res://assets/sprites/battle/buttons/spr_fightbt_center_0.png" id="3_vnurp"]
+[ext_resource type="AudioStream" uid="uid://bjjjmrnpddwwd" path="res://assets/sounds/SND_TXT2.wav" id="4_21hit"]
+[ext_resource type="Texture2D" uid="uid://c5ve853nuxvxg" path="res://assets/sprites/battle/buttons/spr_fightbt_center_1.png" id="4_ggdvu"]
+[ext_resource type="Texture2D" uid="uid://dp60n52121nyt" path="res://assets/sprites/battle/buttons/spr_itembt_0.png" id="5_nkn8d"]
+[ext_resource type="Texture2D" uid="uid://dgemawwnkts30" path="res://assets/sprites/battle/buttons/spr_itembt_1.png" id="6_ms80d"]
+[ext_resource type="Texture2D" uid="uid://d37tjoc4dhyph" path="res://assets/sprites/battle/buttons/spr_sparebt_0.png" id="7_0ag4t"]
+[ext_resource type="Texture2D" uid="uid://d4dvo12orpkpe" path="res://assets/sprites/battle/buttons/spr_sparebt_1.png" id="8_dagi0"]
+[ext_resource type="Texture2D" uid="uid://cccgety4jr8om" path="res://assets/sprites/battle/buttons/spr_actbt_center_0.png" id="9_1greu"]
+[ext_resource type="Texture2D" uid="uid://cmu073mg3trql" path="res://assets/sprites/battle/buttons/spr_actbt_center_1.png" id="10_h28vn"]
+[ext_resource type="Script" path="res://scripts/scr_fightbutton.gd" id="11_r8ao7"]
+[ext_resource type="AudioStream" uid="uid://fps2ypqgyai2" path="res://assets/music/mus_battle1.ogg" id="12_hsygo"]
+[ext_resource type="FontFile" uid="uid://bekv2hb21mm8w" path="res://assets/fonts/Mars Needs Cunnilingus.ttf" id="13_6kp34"]
+[ext_resource type="Script" path="res://scripts/scr_set_text_to_savedata.gd" id="14_40jh1"]
+[ext_resource type="Texture2D" uid="uid://bpppqu7yy457d" path="res://assets/sprites/battle/spr_heart_1.png" id="14_42fxp"]
+[ext_resource type="Script" path="res://scripts/scr_choosesoul.gd" id="14_bk5ei"]
+[ext_resource type="Texture2D" uid="uid://du5qvjeceyx1t" path="res://assets/sprites/battle/healthbar0.png" id="15_re11l"]
+[ext_resource type="Texture2D" uid="uid://bpswmm6tj64er" path="res://assets/sprites/battle/healthbar1.png" id="16_f12y6"]
+[ext_resource type="Texture2D" uid="uid://c3gvx5o27yy87" path="res://assets/sprites/battle/spr_battlebg_0.png" id="16_p0uxy"]
+[ext_resource type="Script" path="res://scripts/scr_healthbar.gd" id="17_10u14"]
+[ext_resource type="Script" path="res://scripts/scr_battlesoul.gd" id="18_dimlm"]
+[ext_resource type="Script" path="res://scripts/scr_hp.gd" id="18_r6q1c"]
+[ext_resource type="PackedScene" uid="uid://bxoe1kb20wetv" path="res://objects/enemies/obj_shroomy.tscn" id="26_02xr6"]
+[ext_resource type="Texture2D" uid="uid://c16ywqxh4ryg2" path="res://assets/sprites/battle/weapons/spr_slice_o_0.png" id="27_ypt2f"]
+[ext_resource type="Texture2D" uid="uid://c1kbhlkx5fc8x" path="res://assets/sprites/battle/weapons/spr_slice_o_1.png" id="28_gtsvr"]
+[ext_resource type="Texture2D" uid="uid://bom0ew0nt5uof" path="res://assets/sprites/battle/weapons/spr_slice_o_2.png" id="29_tix2i"]
+[ext_resource type="Texture2D" uid="uid://nysrlii76225" path="res://assets/sprites/battle/weapons/spr_slice_o_3.png" id="30_cudl6"]
+[ext_resource type="Texture2D" uid="uid://bvvwib57hjkwf" path="res://assets/sprites/battle/weapons/spr_slice_o_4.png" id="31_stu61"]
+[ext_resource type="Texture2D" uid="uid://dtiq4dlowiukx" path="res://assets/sprites/battle/weapons/spr_slice_o_5.png" id="32_f2623"]
+[ext_resource type="Script" path="res://scripts/scr_enemy.gd" id="33_erclj"]
+[ext_resource type="Texture2D" uid="uid://clpi2ns0123ht" path="res://assets/sprites/battle/spr_target_0.png" id="34_hchox"]
+[ext_resource type="Texture2D" uid="uid://bk0blb0s7scqe" path="res://assets/sprites/battle/spr_targetchoice_0.png" id="35_ajarg"]
+[ext_resource type="Script" path="res://scripts/scr_attackbar.gd" id="36_5bk1k"]
+[ext_resource type="Texture2D" uid="uid://cx3y4r2tr1j1l" path="res://assets/sprites/battle/spr_targetchoice_1.png" id="36_vepmh"]
+[ext_resource type="Texture2D" uid="uid://cv04on3v2qxwp" path="res://assets/sprites/battle/enemyhealthbar1.png" id="38_5dnvr"]
+[ext_resource type="Texture2D" uid="uid://ca1incftg6v04" path="res://assets/sprites/battle/enemyhealthbar0.png" id="39_rjjjd"]
+[ext_resource type="Script" path="res://scripts/scr_enemybar.gd" id="40_pbfrc"]
+
+[sub_resource type="Animation" id="Animation_cymwt"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(72, 72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(283, 66)]
+}
+
+[sub_resource type="Animation" id="Animation_6ggxa"]
+resource_name = "box_size_normal"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(72, 72), Vector2(288, 72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(66, 66), Vector2(283, 66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-36, -38), Vector2(-143, -38)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-33, -35), Vector2(-140, -35)]
+}
+
+[sub_resource type="Animation" id="Animation_10kve"]
+resource_name = "box_appear"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(288, 72), Vector2(72, 72)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect2:size")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(283, 66), Vector2(66, 66)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("ColorRect:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-143, -38), Vector2(-36, -38)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("ColorRect2:position")
+tracks/3/interp = 2
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-140, -35), Vector2(-33, -35)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w3ww3"]
+_data = {
+"RESET": SubResource("Animation_cymwt"),
+"box_size_normal": SubResource("Animation_6ggxa"),
+"box_size_square": SubResource("Animation_10kve")
+}
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_38etv"]
+size = Vector2(3, 72)
+
+[sub_resource type="LabelSettings" id="LabelSettings_w0dug"]
+font_size = 13
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_1pw0s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_vnurp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_ggdvu")
+}],
+"loop": true,
+"name": &"fight",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_nkn8d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_ms80d")
+}],
+"loop": true,
+"name": &"item",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_0ag4t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dagi0")
+}],
+"loop": true,
+"name": &"spare",
+"speed": 0.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("9_1greu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_h28vn")
+}],
+"loop": true,
+"name": &"talk",
+"speed": 0.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_54y8a"]
+size = Vector2(8, 8)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ujna8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": null
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_ypt2f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_gtsvr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_tix2i")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_cudl6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_stu61")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_f2623")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 6.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_6mf8o"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("35_ajarg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_vepmh")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="Animation" id="Animation_rxrl3"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(1e-05, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_8em8p"]
+resource_name = "fightappear"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(1e-05, 0.5), Vector2(0.5, 0.5)]
+}
+
+[sub_resource type="Animation" id="Animation_nqino"]
+resource_name = "fightdissapear"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:scale")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0.5, 0.5), Vector2(1e-05, 0.5)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_81up8"]
+_data = {
+"RESET": SubResource("Animation_rxrl3"),
+"fightappear": SubResource("Animation_8em8p"),
+"fightdissapear": SubResource("Animation_nqino")
+}
+
+[node name="room_battle" type="Node2D"]
+script = ExtResource("1_57xde")
+
+[node name="AttackBox" type="StaticBody2D" parent="."]
+position = Vector2(160, 159)
+
+[node name="ColorRect" type="ColorRect" parent="AttackBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -36.0
+offset_top = -38.0
+offset_right = 36.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="AttackBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -33.0
+offset_top = -35.0
+offset_right = 250.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="AttackBox"]
+libraries = {
+"": SubResource("AnimationLibrary_w3ww3")
+}
+autoplay = "box_size_normal"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(-34.5, -2)
+shape = SubResource("RectangleShape2D_38etv")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(34.5, -2)
+shape = SubResource("RectangleShape2D_38etv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(0, -36.5)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_38etv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="AttackBox"]
+position = Vector2(0, 32.5)
+rotation = 1.57079
+shape = SubResource("RectangleShape2D_38etv")
+
+[node name="BattleBox" type="Node2D" parent="."]
+visible = false
+position = Vector2(160, 159)
+script = ExtResource("1_4dtdt")
+
+[node name="ColorRect" type="ColorRect" parent="BattleBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -38.0
+offset_right = 146.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="BattleBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -35.0
+offset_right = 143.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Label" type="Label" parent="BattleBox"]
+texture_filter = 1
+offset_left = -133.0
+offset_top = -28.0
+offset_right = 135.0
+offset_bottom = -8.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Wow, it's a test."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="BattleBox"]
+stream = ExtResource("4_21hit")
+
+[node name="ChoiceBox" type="Node2D" parent="."]
+visible = false
+position = Vector2(160, 159)
+
+[node name="ColorRect" type="ColorRect" parent="ChoiceBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -143.0
+offset_top = -38.0
+offset_right = 146.0
+offset_bottom = 34.0
+grow_horizontal = 2
+grow_vertical = 0
+
+[node name="ColorRect2" type="ColorRect" parent="ChoiceBox"]
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -140.0
+offset_top = -35.0
+offset_right = 143.0
+offset_bottom = 31.0
+grow_horizontal = 2
+grow_vertical = 0
+color = Color(0, 0, 0, 1)
+
+[node name="Option0" type="Label" parent="ChoiceBox"]
+texture_filter = 1
+offset_left = -113.0
+offset_top = -28.0
+offset_right = -23.0
+offset_bottom = -12.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Option 1"
+label_settings = SubResource("LabelSettings_w0dug")
+
+[node name="Option1" type="Label" parent="ChoiceBox"]
+texture_filter = 1
+offset_left = 36.0
+offset_top = -28.0
+offset_right = 126.0
+offset_bottom = -8.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Option 2"
+label_settings = SubResource("LabelSettings_w0dug")
+
+[node name="Option2" type="Label" parent="ChoiceBox"]
+texture_filter = 1
+offset_left = -113.0
+offset_top = -11.0
+offset_right = -23.0
+offset_bottom = 5.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Option 3"
+label_settings = SubResource("LabelSettings_w0dug")
+
+[node name="Option3" type="Label" parent="ChoiceBox"]
+texture_filter = 1
+offset_left = 36.0
+offset_top = -11.0
+offset_right = 126.0
+offset_bottom = 9.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Option 4"
+label_settings = SubResource("LabelSettings_w0dug")
+
+[node name="Option4" type="Label" parent="ChoiceBox"]
+texture_filter = 1
+offset_left = -113.0
+offset_top = 4.0
+offset_right = -23.0
+offset_bottom = 20.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Option 5"
+label_settings = SubResource("LabelSettings_w0dug")
+
+[node name="Option5" type="Label" parent="ChoiceBox"]
+texture_filter = 1
+offset_left = 36.0
+offset_top = 4.0
+offset_right = 126.0
+offset_bottom = 24.0
+theme_override_constants/line_spacing = 1
+theme_override_fonts/font = ExtResource("2_ngf0v")
+theme_override_font_sizes/font_size = 13
+text = "* Option 6"
+label_settings = SubResource("LabelSettings_w0dug")
+
+[node name="UI" type="Node2D" parent="."]
+
+[node name="fight" type="AnimatedSprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(41, 223)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1pw0s")
+animation = &"fight"
+script = ExtResource("11_r8ao7")
+
+[node name="act" type="AnimatedSprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(121, 223)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1pw0s")
+animation = &"talk"
+script = ExtResource("11_r8ao7")
+id = 1
+
+[node name="item" type="AnimatedSprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(201, 223)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1pw0s")
+animation = &"item"
+script = ExtResource("11_r8ao7")
+id = 2
+
+[node name="spare" type="AnimatedSprite2D" parent="UI"]
+texture_filter = 1
+position = Vector2(281, 223)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_1pw0s")
+animation = &"spare"
+script = ExtResource("11_r8ao7")
+id = 3
+
+[node name="Label" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 20.0
+offset_top = 197.0
+offset_right = 60.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("13_6kp34")
+theme_override_font_sizes/font_size = 12
+text = "CHARA"
+script = ExtResource("14_40jh1")
+dataName = "name"
+
+[node name="Label2" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 78.0
+offset_top = 197.0
+offset_right = 118.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("13_6kp34")
+theme_override_font_sizes/font_size = 12
+text = "LV 1"
+script = ExtResource("14_40jh1")
+prefix = "LV "
+dataName = "lv"
+
+[node name="Label3" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 116.0
+offset_top = 197.0
+offset_right = 156.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("13_6kp34")
+theme_override_font_sizes/font_size = 12
+text = "HP"
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="UI"]
+offset_left = 140.0
+offset_top = 197.0
+offset_right = 160.0
+offset_bottom = 217.0
+scale = Vector2(1, 0.5)
+max_value = 20.0
+texture_under = ExtResource("16_f12y6")
+texture_progress = ExtResource("15_re11l")
+script = ExtResource("17_10u14")
+
+[node name="Label4" type="Label" parent="UI"]
+texture_filter = 1
+offset_left = 167.0
+offset_top = 197.0
+offset_right = 207.0
+offset_bottom = 220.0
+theme_override_fonts/font = ExtResource("13_6kp34")
+theme_override_font_sizes/font_size = 12
+text = "20/20"
+script = ExtResource("18_r6q1c")
+
+[node name="BGM" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("12_hsygo")
+autoplay = true
+
+[node name="heart_ui" type="Sprite2D" parent="."]
+z_index = 1
+texture_filter = 1
+position = Vector2(261, 223)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_42fxp")
+script = ExtResource("14_bk5ei")
+
+[node name="SprBattlebg1" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(160, 120)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("16_p0uxy")
+
+[node name="soul" type="CharacterBody2D" parent="."]
+texture_filter = 1
+script = ExtResource("18_dimlm")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soul"]
+shape = SubResource("RectangleShape2D_54y8a")
+
+[node name="heart_ui" type="Sprite2D" parent="soul"]
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("14_42fxp")
+
+[node name="Area2D" type="Area2D" parent="soul"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="soul/Area2D"]
+shape = SubResource("RectangleShape2D_54y8a")
+
+[node name="Enemy" parent="." instance=ExtResource("26_02xr6")]
+position = Vector2(160, 68)
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+
+[node name="slash" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+position = Vector2(163, 62)
+sprite_frames = SubResource("SpriteFrames_ujna8")
+frame = 7
+frame_progress = 1.0
+script = ExtResource("33_erclj")
+
+[node name="attackbar" type="AnimatedSprite2D" parent="."]
+z_index = 1
+position = Vector2(290, 157)
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_6mf8o")
+autoplay = "default"
+frame_progress = 0.225795
+script = ExtResource("36_5bk1k")
+
+[node name="SprTarget0" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(162, 157)
+scale = Vector2(1e-05, 0.5)
+texture = ExtResource("34_hchox")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="SprTarget0"]
+libraries = {
+"": SubResource("AnimationLibrary_81up8")
+}
+
+[node name="EnemyHealth" type="TextureProgressBar" parent="."]
+visible = false
+offset_left = 60.0
+offset_top = 80.0
+offset_right = 80.0
+offset_bottom = 100.0
+scale = Vector2(10, 0.4)
+value = 50.0
+texture_under = ExtResource("38_5dnvr")
+texture_progress = ExtResource("39_rjjjd")
+script = ExtResource("40_pbfrc")

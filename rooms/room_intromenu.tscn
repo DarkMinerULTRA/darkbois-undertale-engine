@@ -1,0 +1,853 @@
+[gd_scene load_steps=68 format=3 uid="uid://cleesejie7hjc"]
+
+[ext_resource type="Script" path="res://scripts/scr_intromenu.gd" id="1_au017"]
+[ext_resource type="FontFile" uid="uid://723cq8kghvo7" path="res://assets/fonts/8bitoperator_jve.ttf" id="2_16pdw"]
+[ext_resource type="FontFile" uid="uid://cxylwu58bk4hg" path="res://assets/fonts/crypt-of-tomorrow-ut-font-no-rus.ttf" id="3_pjpis"]
+[ext_resource type="AudioStream" uid="uid://il8h8igsdxn1" path="res://assets/music/mus_menu1.ogg" id="4_njcv1"]
+
+[sub_resource type="FontVariation" id="FontVariation_iy3md"]
+base_font = ExtResource("2_16pdw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ct67p"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+font_color = Color(0.752941, 0.752941, 0.752941, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_qix87"]
+line_spacing = 2.0
+font = ExtResource("2_16pdw")
+font_color = Color(1, 1, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_np8ri"]
+font = ExtResource("3_pjpis")
+font_size = 5
+font_color = Color(0.25, 0.25, 0.25, 1)
+
+[sub_resource type="FontVariation" id="FontVariation_m1ef8"]
+base_font = ExtResource("2_16pdw")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xialj"]
+line_spacing = 2.0
+font = SubResource("FontVariation_m1ef8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4s863"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bj70"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_6poes"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hf5ta"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_lbfkk"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_i0cev"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xm6ix"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8wyll"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_dpc11"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0s3u1"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_k76il"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gntjq"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_vgjko"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rqn6p"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5bigm"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_n7giw"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xg00h"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4d5n3"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_415ti"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_1n02d"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3mavu"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f36xx"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ylcl5"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_80u2i"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_f8xwy"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_c3bqi"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_edjr7"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bidhp"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_v6i83"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yvybq"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_3sh0u"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_nx53f"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wbvww"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_gjqmr"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_0sxqj"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_rx3hp"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_go8n3"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_l8bg4"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_icben"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_sgnb2"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_ascwl"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xi4f1"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_4emwu"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_xxw2v"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_bru5p"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7sjy2"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_yujbw"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_a3ivw"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_70ft7"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mccyo"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_5c3sy"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_d2586"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_mu4q0"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_8dgpq"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_wg34i"]
+line_spacing = 2.0
+font = SubResource("FontVariation_iy3md")
+
+[sub_resource type="LabelSettings" id="LabelSettings_y2nwt"]
+line_spacing = 2.0
+font = SubResource("FontVariation_m1ef8")
+
+[sub_resource type="LabelSettings" id="LabelSettings_hrkc5"]
+line_spacing = 2.0
+font = SubResource("FontVariation_m1ef8")
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_au017")
+
+[node name="tutorial" type="Node2D" parent="."]
+
+[node name="Label" type="Label" parent="tutorial"]
+offset_left = 112.0
+offset_top = 19.0
+offset_right = 261.0
+offset_bottom = 42.0
+text = "Instruction"
+label_settings = SubResource("LabelSettings_ct67p")
+
+[node name="Label2" type="Label" parent="tutorial"]
+offset_left = 85.0
+offset_top = 49.0
+offset_right = 321.0
+offset_bottom = 155.0
+text = "[Z or ENTER] - Confirm
+[X or SHIFT] - Cancel
+[C or CTRL] - Menu (In-game)
+[F4] - Fullscreen
+[Hold ESC] - Quit
+When HP is 0, you lose."
+label_settings = SubResource("LabelSettings_ct67p")
+
+[node name="Label3" type="Label" parent="tutorial"]
+offset_left = 88.0
+offset_top = 19.0
+offset_right = 324.0
+offset_bottom = 94.0
+text = "---"
+label_settings = SubResource("LabelSettings_ct67p")
+
+[node name="Label4" type="Label" parent="tutorial"]
+offset_left = 192.0
+offset_top = 19.0
+offset_right = 428.0
+offset_bottom = 94.0
+text = "---"
+label_settings = SubResource("LabelSettings_ct67p")
+
+[node name="Label5" type="Label" parent="tutorial"]
+offset_left = 85.0
+offset_top = 171.0
+offset_right = 321.0
+offset_bottom = 246.0
+text = "Begin Game"
+label_settings = SubResource("LabelSettings_qix87")
+
+[node name="copyright" type="Label" parent="tutorial"]
+texture_filter = 1
+offset_top = 215.0
+offset_right = 320.0
+offset_bottom = 238.0
+text = "undertale (c) toby fox 2015-2024
+engine made by darkboi12 on github"
+label_settings = SubResource("LabelSettings_np8ri")
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="name" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="name"]
+offset_left = 90.0
+offset_top = 30.0
+offset_right = 230.0
+offset_bottom = 53.0
+text = "Name the fallen human."
+label_settings = SubResource("LabelSettings_xialj")
+
+[node name="name" type="Label" parent="name"]
+offset_left = 140.0
+offset_top = 55.0
+offset_right = 280.0
+offset_bottom = 78.0
+label_settings = SubResource("LabelSettings_xialj")
+
+[node name="0" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 75.0
+offset_right = 200.0
+offset_bottom = 98.0
+text = "A"
+label_settings = SubResource("LabelSettings_4s863")
+
+[node name="1" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 75.0
+offset_right = 232.0
+offset_bottom = 98.0
+text = "B"
+label_settings = SubResource("LabelSettings_1bj70")
+
+[node name="2" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 75.0
+offset_right = 264.0
+offset_bottom = 98.0
+text = "C"
+label_settings = SubResource("LabelSettings_6poes")
+
+[node name="3" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 75.0
+offset_right = 296.0
+offset_bottom = 98.0
+text = "D"
+label_settings = SubResource("LabelSettings_hf5ta")
+
+[node name="4" type="Label" parent="name"]
+offset_left = 188.0
+offset_top = 75.0
+offset_right = 328.0
+offset_bottom = 98.0
+text = "E"
+label_settings = SubResource("LabelSettings_lbfkk")
+
+[node name="5" type="Label" parent="name"]
+offset_left = 219.0
+offset_top = 75.0
+offset_right = 359.0
+offset_bottom = 98.0
+text = "F"
+label_settings = SubResource("LabelSettings_i0cev")
+
+[node name="6" type="Label" parent="name"]
+offset_left = 252.0
+offset_top = 75.0
+offset_right = 392.0
+offset_bottom = 98.0
+text = "G"
+label_settings = SubResource("LabelSettings_xm6ix")
+
+[node name="7" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 89.0
+offset_right = 200.0
+offset_bottom = 112.0
+text = "H"
+label_settings = SubResource("LabelSettings_8wyll")
+
+[node name="8" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 89.0
+offset_right = 232.0
+offset_bottom = 112.0
+text = "I"
+label_settings = SubResource("LabelSettings_dpc11")
+
+[node name="9" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 89.0
+offset_right = 264.0
+offset_bottom = 112.0
+text = "J"
+label_settings = SubResource("LabelSettings_0s3u1")
+
+[node name="10" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 89.0
+offset_right = 296.0
+offset_bottom = 112.0
+text = "K"
+label_settings = SubResource("LabelSettings_k76il")
+
+[node name="11" type="Label" parent="name"]
+offset_left = 188.0
+offset_top = 89.0
+offset_right = 328.0
+offset_bottom = 112.0
+text = "L"
+label_settings = SubResource("LabelSettings_gntjq")
+
+[node name="12" type="Label" parent="name"]
+offset_left = 220.0
+offset_top = 89.0
+offset_right = 360.0
+offset_bottom = 112.0
+text = "M"
+label_settings = SubResource("LabelSettings_vgjko")
+
+[node name="13" type="Label" parent="name"]
+offset_left = 252.0
+offset_top = 89.0
+offset_right = 392.0
+offset_bottom = 112.0
+text = "N"
+label_settings = SubResource("LabelSettings_rqn6p")
+
+[node name="14" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 103.0
+offset_right = 200.0
+offset_bottom = 126.0
+text = "O"
+label_settings = SubResource("LabelSettings_5bigm")
+
+[node name="15" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 103.0
+offset_right = 232.0
+offset_bottom = 126.0
+text = "P"
+label_settings = SubResource("LabelSettings_n7giw")
+
+[node name="16" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 103.0
+offset_right = 264.0
+offset_bottom = 126.0
+text = "Q"
+label_settings = SubResource("LabelSettings_xg00h")
+
+[node name="17" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 103.0
+offset_right = 296.0
+offset_bottom = 126.0
+text = "R"
+label_settings = SubResource("LabelSettings_4d5n3")
+
+[node name="18" type="Label" parent="name"]
+offset_left = 187.0
+offset_top = 103.0
+offset_right = 327.0
+offset_bottom = 126.0
+text = "S"
+label_settings = SubResource("LabelSettings_415ti")
+
+[node name="19" type="Label" parent="name"]
+offset_left = 220.0
+offset_top = 103.0
+offset_right = 360.0
+offset_bottom = 126.0
+text = "T"
+label_settings = SubResource("LabelSettings_1n02d")
+
+[node name="20" type="Label" parent="name"]
+offset_left = 251.0
+offset_top = 103.0
+offset_right = 391.0
+offset_bottom = 126.0
+text = "U"
+label_settings = SubResource("LabelSettings_3mavu")
+
+[node name="21" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 117.0
+offset_right = 200.0
+offset_bottom = 140.0
+text = "V"
+label_settings = SubResource("LabelSettings_f36xx")
+
+[node name="22" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 117.0
+offset_right = 232.0
+offset_bottom = 140.0
+text = "W"
+label_settings = SubResource("LabelSettings_ylcl5")
+
+[node name="23" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 117.0
+offset_right = 264.0
+offset_bottom = 140.0
+text = "X"
+label_settings = SubResource("LabelSettings_80u2i")
+
+[node name="24" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 117.0
+offset_right = 296.0
+offset_bottom = 140.0
+text = "Y"
+label_settings = SubResource("LabelSettings_f8xwy")
+
+[node name="25" type="Label" parent="name"]
+offset_left = 187.0
+offset_top = 117.0
+offset_right = 327.0
+offset_bottom = 140.0
+text = "Z"
+label_settings = SubResource("LabelSettings_c3bqi")
+justification_flags = 162
+
+[node name="26" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 135.0
+offset_right = 200.0
+offset_bottom = 158.0
+text = "a"
+label_settings = SubResource("LabelSettings_edjr7")
+justification_flags = 162
+
+[node name="27" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 135.0
+offset_right = 232.0
+offset_bottom = 158.0
+text = "b"
+label_settings = SubResource("LabelSettings_bidhp")
+justification_flags = 162
+
+[node name="28" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 134.0
+offset_right = 264.0
+offset_bottom = 157.0
+text = "c"
+label_settings = SubResource("LabelSettings_v6i83")
+justification_flags = 162
+
+[node name="29" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 134.0
+offset_right = 296.0
+offset_bottom = 157.0
+text = "d"
+label_settings = SubResource("LabelSettings_yvybq")
+justification_flags = 162
+
+[node name="30" type="Label" parent="name"]
+offset_left = 188.0
+offset_top = 134.0
+offset_right = 328.0
+offset_bottom = 157.0
+text = "e"
+label_settings = SubResource("LabelSettings_3sh0u")
+justification_flags = 162
+
+[node name="31" type="Label" parent="name"]
+offset_left = 219.0
+offset_top = 135.0
+offset_right = 359.0
+offset_bottom = 158.0
+text = "f"
+label_settings = SubResource("LabelSettings_nx53f")
+justification_flags = 162
+
+[node name="32" type="Label" parent="name"]
+offset_left = 252.0
+offset_top = 134.0
+offset_right = 392.0
+offset_bottom = 157.0
+text = "g"
+label_settings = SubResource("LabelSettings_wbvww")
+justification_flags = 162
+
+[node name="33" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 148.0
+offset_right = 200.0
+offset_bottom = 171.0
+text = "h"
+label_settings = SubResource("LabelSettings_gjqmr")
+justification_flags = 162
+
+[node name="34" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 149.0
+offset_right = 232.0
+offset_bottom = 172.0
+text = "i"
+label_settings = SubResource("LabelSettings_0sxqj")
+justification_flags = 162
+
+[node name="35" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 149.0
+offset_right = 264.0
+offset_bottom = 172.0
+text = "j"
+label_settings = SubResource("LabelSettings_rx3hp")
+justification_flags = 162
+
+[node name="36" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 149.0
+offset_right = 296.0
+offset_bottom = 172.0
+text = "k"
+label_settings = SubResource("LabelSettings_go8n3")
+justification_flags = 162
+
+[node name="37" type="Label" parent="name"]
+offset_left = 188.0
+offset_top = 148.0
+offset_right = 328.0
+offset_bottom = 171.0
+text = "l"
+label_settings = SubResource("LabelSettings_l8bg4")
+justification_flags = 162
+
+[node name="38" type="Label" parent="name"]
+offset_left = 219.0
+offset_top = 149.0
+offset_right = 359.0
+offset_bottom = 172.0
+text = "m"
+label_settings = SubResource("LabelSettings_icben")
+justification_flags = 162
+
+[node name="39" type="Label" parent="name"]
+offset_left = 252.0
+offset_top = 148.0
+offset_right = 392.0
+offset_bottom = 171.0
+text = "n"
+label_settings = SubResource("LabelSettings_sgnb2")
+justification_flags = 162
+
+[node name="40" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 162.0
+offset_right = 200.0
+offset_bottom = 185.0
+text = "o"
+label_settings = SubResource("LabelSettings_ascwl")
+justification_flags = 162
+
+[node name="41" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 162.0
+offset_right = 232.0
+offset_bottom = 185.0
+text = "p"
+label_settings = SubResource("LabelSettings_xi4f1")
+justification_flags = 162
+
+[node name="42" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 162.0
+offset_right = 264.0
+offset_bottom = 185.0
+text = "q"
+label_settings = SubResource("LabelSettings_4emwu")
+justification_flags = 162
+
+[node name="43" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 162.0
+offset_right = 296.0
+offset_bottom = 185.0
+text = "r"
+label_settings = SubResource("LabelSettings_xxw2v")
+justification_flags = 162
+
+[node name="44" type="Label" parent="name"]
+offset_left = 187.0
+offset_top = 162.0
+offset_right = 327.0
+offset_bottom = 185.0
+text = "s"
+label_settings = SubResource("LabelSettings_bru5p")
+justification_flags = 162
+
+[node name="45" type="Label" parent="name"]
+offset_left = 219.0
+offset_top = 162.0
+offset_right = 359.0
+offset_bottom = 185.0
+text = "t"
+label_settings = SubResource("LabelSettings_7sjy2")
+justification_flags = 162
+
+[node name="46" type="Label" parent="name"]
+offset_left = 251.0
+offset_top = 162.0
+offset_right = 391.0
+offset_bottom = 185.0
+text = "u"
+label_settings = SubResource("LabelSettings_yujbw")
+justification_flags = 162
+
+[node name="47" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 176.0
+offset_right = 200.0
+offset_bottom = 199.0
+text = "v"
+label_settings = SubResource("LabelSettings_a3ivw")
+justification_flags = 162
+
+[node name="48" type="Label" parent="name"]
+offset_left = 92.0
+offset_top = 176.0
+offset_right = 232.0
+offset_bottom = 199.0
+text = "w"
+label_settings = SubResource("LabelSettings_70ft7")
+justification_flags = 162
+
+[node name="49" type="Label" parent="name"]
+offset_left = 124.0
+offset_top = 176.0
+offset_right = 264.0
+offset_bottom = 199.0
+text = "x"
+label_settings = SubResource("LabelSettings_mccyo")
+justification_flags = 162
+
+[node name="50" type="Label" parent="name"]
+offset_left = 156.0
+offset_top = 176.0
+offset_right = 296.0
+offset_bottom = 199.0
+text = "y"
+label_settings = SubResource("LabelSettings_5c3sy")
+justification_flags = 162
+
+[node name="51" type="Label" parent="name"]
+offset_left = 187.0
+offset_top = 176.0
+offset_right = 327.0
+offset_bottom = 199.0
+text = "z"
+label_settings = SubResource("LabelSettings_d2586")
+justification_flags = 162
+
+[node name="quit" type="Label" parent="name"]
+offset_left = 60.0
+offset_top = 200.0
+offset_right = 200.0
+offset_bottom = 223.0
+text = "Quit"
+label_settings = SubResource("LabelSettings_mu4q0")
+justification_flags = 162
+
+[node name="backspace" type="Label" parent="name"]
+offset_left = 120.0
+offset_top = 200.0
+offset_right = 260.0
+offset_bottom = 223.0
+text = "Backspace"
+label_settings = SubResource("LabelSettings_8dgpq")
+justification_flags = 162
+
+[node name="done" type="Label" parent="name"]
+offset_left = 220.0
+offset_top = 200.0
+offset_right = 360.0
+offset_bottom = 223.0
+text = "Done"
+label_settings = SubResource("LabelSettings_wg34i")
+justification_flags = 162
+
+[node name="confirm" type="Node2D" parent="."]
+visible = false
+
+[node name="Label" type="Label" parent="confirm"]
+offset_left = 90.0
+offset_top = 30.0
+offset_right = 230.0
+offset_bottom = 53.0
+text = "Is this name correct?"
+label_settings = SubResource("LabelSettings_xialj")
+
+[node name="name" type="Label" parent="confirm"]
+offset_left = 107.0
+offset_top = 107.0
+offset_right = 247.0
+offset_bottom = 130.0
+scale = Vector2(3.075, 3.075)
+text = "AAAAAA"
+label_settings = SubResource("LabelSettings_xialj")
+
+[node name="no" type="Label" parent="confirm"]
+offset_left = 73.0
+offset_top = 199.0
+offset_right = 213.0
+offset_bottom = 222.0
+text = "No"
+label_settings = SubResource("LabelSettings_y2nwt")
+
+[node name="yes" type="Label" parent="confirm"]
+offset_left = 230.0
+offset_top = 199.0
+offset_right = 370.0
+offset_bottom = 222.0
+text = "Yes"
+label_settings = SubResource("LabelSettings_hrkc5")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_njcv1")
+autoplay = true
+
+[node name="ColorRect" type="ColorRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+offset_right = 320.0
+offset_bottom = 240.0

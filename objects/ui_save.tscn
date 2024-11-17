@@ -1,0 +1,77 @@
+[gd_scene load_steps=8 format=3 uid="uid://cb3wjudfyh6ps"]
+
+[ext_resource type="Script" path="res://scripts/ui_save.gd" id="1_7ut0k"]
+[ext_resource type="PackedScene" uid="uid://bl1mx4aqc42po" path="res://objects/ui_box.tscn" id="1_l2sup"]
+[ext_resource type="FontFile" uid="uid://c3rgkrclcqocg" path="res://assets/fonts/DTM-Sans.otf" id="2_xcmw5"]
+[ext_resource type="Texture2D" uid="uid://vy8x8rd6ij1" path="res://assets/sprites/overworld/spr_heartsmall_0.png" id="3_kbakp"]
+[ext_resource type="AudioStream" uid="uid://b0xugaj6qhxi5" path="res://assets/sounds/snd_save.wav" id="5_ms7d4"]
+
+[sub_resource type="FontVariation" id="FontVariation_85qad"]
+base_font = ExtResource("2_xcmw5")
+spacing_space = 1
+
+[sub_resource type="LabelSettings" id="LabelSettings_4kp3c"]
+font = SubResource("FontVariation_85qad")
+font_size = 13
+
+[node name="save" type="CanvasLayer"]
+script = ExtResource("1_7ut0k")
+
+[node name="UiBox" parent="." instance=ExtResource("1_l2sup")]
+position = Vector2(160, 120)
+size = Vector2(212, 87)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 70.0
+offset_top = 88.0
+offset_right = 110.0
+offset_bottom = 108.0
+text = "EMPTY"
+label_settings = SubResource("LabelSettings_4kp3c")
+
+[node name="Label2" type="Label" parent="."]
+offset_left = 140.0
+offset_top = 88.0
+offset_right = 180.0
+offset_bottom = 108.0
+text = "LV 0"
+label_settings = SubResource("LabelSettings_4kp3c")
+
+[node name="Label3" type="Label" parent="."]
+offset_left = 210.0
+offset_top = 88.0
+offset_right = 250.0
+offset_bottom = 108.0
+text = "0:00"
+label_settings = SubResource("LabelSettings_4kp3c")
+
+[node name="Label4" type="Label" parent="."]
+offset_left = 71.0
+offset_top = 108.0
+offset_right = 161.0
+offset_bottom = 128.0
+text = "--"
+label_settings = SubResource("LabelSettings_4kp3c")
+
+[node name="Label5" type="Label" parent="."]
+offset_left = 85.0
+offset_top = 138.0
+offset_right = 175.0
+offset_bottom = 158.0
+text = "Save"
+label_settings = SubResource("LabelSettings_4kp3c")
+
+[node name="Label6" type="Label" parent="."]
+offset_left = 175.0
+offset_top = 138.0
+offset_right = 265.0
+offset_bottom = 158.0
+text = "Return"
+label_settings = SubResource("LabelSettings_4kp3c")
+
+[node name="heart" type="Sprite2D" parent="."]
+position = Vector2(167, 145)
+texture = ExtResource("3_kbakp")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("5_ms7d4")

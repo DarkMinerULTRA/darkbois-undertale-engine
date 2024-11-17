@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://b8hoqucqmvnv"]
+
+[ext_resource type="Script" path="res://scripts/scr_battle_transition.gd" id="1_gt0b4"]
+[ext_resource type="Texture2D" uid="uid://njjg2lornqng" path="res://assets/sprites/battle/spr_heart_0.png" id="2_vvvd0"]
+[ext_resource type="Texture2D" uid="uid://bpppqu7yy457d" path="res://assets/sprites/battle/spr_heart_1.png" id="3_fvyl5"]
+[ext_resource type="AudioStream" uid="uid://ck68qdhgw64wb" path="res://assets/sounds/snd_noise.wav" id="4_h1h04"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5sffm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_fvyl5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_vvvd0")
+}],
+"loop": true,
+"name": &"default",
+"speed": 0.0
+}]
+
+[node name="Node2D" type="Node2D"]
+script = ExtResource("1_gt0b4")
+
+[node name="Camera2D" type="Camera2D" parent="."]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+modulate = Color(1, 0, 0, 1)
+texture_filter = 1
+scale = Vector2(0.5, 0.5)
+sprite_frames = SubResource("SpriteFrames_5sffm")
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("4_h1h04")

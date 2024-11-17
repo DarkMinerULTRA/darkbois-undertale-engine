@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://bexyhn2k1kyfq"]
+
+[ext_resource type="FontFile" uid="uid://bekv2hb21mm8w" path="res://assets/fonts/Mars Needs Cunnilingus.ttf" id="1_jr6ak"]
+[ext_resource type="Script" path="res://scripts/quit.gd" id="1_uv0ww"]
+
+[node name="CanvasLayer" type="CanvasLayer"]
+script = ExtResource("1_uv0ww")
+
+[node name="Label" type="Label" parent="."]
+texture_filter = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 103.0
+offset_bottom = 28.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 9
+theme_override_fonts/font = ExtResource("1_jr6ak")
+text = "quitting..."

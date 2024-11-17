@@ -1,0 +1,81 @@
+[gd_scene load_steps=11 format=3 uid="uid://diudje2erhxna"]
+
+[ext_resource type="Script" path="res://scripts/scr_dialogueHandler.gd" id="1_xg1ef"]
+[ext_resource type="FontFile" uid="uid://d0lg6tdg5vcrf" path="res://assets/fonts/DTM-Mono.otf" id="2_4yq68"]
+[ext_resource type="PackedScene" uid="uid://bl1mx4aqc42po" path="res://objects/ui_box.tscn" id="2_bviud"]
+[ext_resource type="Texture2D" uid="uid://cjy0owjgixl3u" path="res://assets/sprites/dialogue_faces/empty.png" id="4_i8xwp"]
+[ext_resource type="Texture2D" uid="uid://dfq4p3m16api6" path="res://assets/sprites/dialogue_faces/spr_shroomer.png" id="5_7w5uh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ad2yp"]
+atlas = ExtResource("5_7w5uh")
+region = Rect2(192, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qahyf"]
+atlas = ExtResource("5_7w5uh")
+region = Rect2(128, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ci87o"]
+atlas = ExtResource("5_7w5uh")
+region = Rect2(64, 0, 64, 64)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x00p6"]
+atlas = ExtResource("5_7w5uh")
+region = Rect2(0, 0, 64, 64)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_4b4nq"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_i8xwp")
+}],
+"loop": true,
+"name": &"none",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ad2yp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qahyf")
+}],
+"loop": true,
+"name": &"shroomer_evil",
+"speed": 8.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ci87o")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x00p6")
+}],
+"loop": true,
+"name": &"shroomer_normal",
+"speed": 8.0
+}]
+
+[node name="DialogueHandler" type="CanvasLayer"]
+layer = 2
+script = ExtResource("1_xg1ef")
+
+[node name="UiBox" parent="." instance=ExtResource("2_bviud")]
+position = Vector2(160, 188)
+size = Vector2(289, 76)
+
+[node name="Label" type="Label" parent="UiBox"]
+texture_filter = 1
+offset_left = -69.0
+offset_top = -28.0
+offset_right = 199.0
+offset_bottom = -8.0
+theme_override_fonts/font = ExtResource("2_4yq68")
+theme_override_font_sizes/font_size = 13
+text = "* Wow, it's a test."
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="UiBox"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="UiBox"]
+position = Vector2(-100, 0)
+sprite_frames = SubResource("SpriteFrames_4b4nq")
+animation = &"shroomer_evil"
