@@ -1,7 +1,5 @@
 extends Node2D
 
-@export var sprite : Texture2D
-
 signal hurt
 
 func _hurt():
@@ -14,5 +12,9 @@ func _hurt():
 		await get_tree().create_timer(0.05).timeout
 	position.x = 160
 
+func _spritechange(command : String):
+	pass
+
 func _ready():
 	hurt.connect(_hurt)
+	get_tree().current_scene.get_node("speechbubble").sprite_change.connect(_spritechange)
