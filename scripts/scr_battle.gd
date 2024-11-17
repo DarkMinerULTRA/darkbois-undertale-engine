@@ -5,6 +5,9 @@ var monster_atk = 0
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	var enemy = load("res://objects/enemies/obj_"+data.battledata[battleHandler.battleId]["obj"]+".tscn").instantiate()
+	enemy.position = Vector2(160,68)
+	add_child(enemy)
 	fade.fadeIn(0.5)
 	$BGM.stream = load("res://assets/music/"+battleHandler.music+".ogg")
 	$BGM.play()

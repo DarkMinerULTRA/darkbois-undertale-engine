@@ -155,6 +155,7 @@ position = Vector2(0, 8)
 shape = SubResource("RectangleShape2D_k7tir")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+visible = false
 script = ExtResource("14_ttlwt")
 
 [node name="UiBox" parent="CanvasLayer" instance=ExtResource("14_ee4ew")]

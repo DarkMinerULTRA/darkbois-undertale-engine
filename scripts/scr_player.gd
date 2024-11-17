@@ -31,7 +31,7 @@ func _physics_process(_delta):
 		$AnimatedSprite2D.frame = 1
 	elif global.can_player_move == true:
 		playerVariables.steps += 1
-		if playerVariables.steps >= playerVariables.encounter_steps and !playerVariables.encountered_enemy and data.room_encounters.has(data.rooms[data.savedata["curScene"]]):
+		if playerVariables.steps >= playerVariables.encounter_steps and !playerVariables.encountered_enemy and data.room_encounters.has(data.rooms[data.savedata["curScene"]]) and data.rooms.has(get_tree().current_scene.name):
 			playerVariables.encountered_enemy = true
 			global.can_player_move = false
 			$AudioStreamPlayer2.play()
@@ -41,10 +41,10 @@ func _physics_process(_delta):
 			var encounter_name = data.room_encounters[data.rooms[data.savedata["curScene"]]][randi_range(0,data.room_encounters[data.rooms[data.savedata["curScene"]]].size()-1)]
 			var population : int
 			for i in data.areas:
-				if data.areas[i]["rooms"].has(data.room_names[data.rooms[data.savedata["curScene"]]]):
+				if data.areas[i]["rooms"].has(data.rooms[data.savedata["curScene"]]):
 					population = data.areas[i]["population"]
 					break
-			print(encounter_name)
+			print(population)
 			var encounter : int
 			var encounter_id = -1
 			for i in data.battledata:

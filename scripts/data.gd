@@ -101,6 +101,9 @@ var battledata = [
 		"gold":50, # gold on win
 		"atk":3, # atk
 		"def":1, # def
+		"fake_stats":false, # if true, displays fake stats
+		"fake_atk":20,
+		"fake_def":20,
 		"check":"* A simple mushroom.^5&* With a face.", # check message.
 		"acts":["Check","Say Hi","telekenothing"], # acts. define these in battleHandler's "_action" function.
 		"flavTexts":["* Smells like mushroom stew.^5&  Gross.","* Smells like mushroom stew.^5&  Delicious!"], # random texts.

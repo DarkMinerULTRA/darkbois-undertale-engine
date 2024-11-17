@@ -200,7 +200,10 @@ func _action(action : String):
 	choose2 = false
 	match action:
 		"* Check":
-			playDialogue.emit(["* "+data.battledata[battleId]["name"]+" - ATK "+str(data.battledata[battleId]["atk"])+" DEF "+str(data.battledata[battleId]["def"])+"&"+data.battledata[battleId]["check"]])
+			if data.battledata[battleId]["fake_stats"] == false:
+				playDialogue.emit(["* "+data.battledata[battleId]["name"]+" - ATK "+str(data.battledata[battleId]["atk"])+" DEF "+str(data.battledata[battleId]["def"])+"&"+data.battledata[battleId]["check"]])
+			else:
+				playDialogue.emit(["* "+data.battledata[battleId]["name"]+" - ATK "+str(data.battledata[battleId]["fake_atk"])+" DEF "+str(data.battledata[battleId]["fake_def"])+"&"+data.battledata[battleId]["check"]])
 			await get_node("/root/room_battle/BattleBox").finished
 		"* Spare":
 			if canSpare == true:
@@ -209,15 +212,6 @@ func _action(action : String):
 				enemyTurn = false
 				battleOver = true
 				endBattle.emit(0)
-		"* Say Hi":
-			playDialogue.emit(["* You say 'hi'.^5&  Shroomy says hi back.","* What a meaningful conversation!"])
-			await get_node("/root/room_battle/BattleBox").finished
-			monsterDialogue = "you're my friend&now^5&we're having soft&tacos later!"
-			canSpare = true
-		"* telekenothing":
-			playDialogue.emit(["* You attempt to blow up&  Shroomy with your mind...","* But you don't have&  t e l e k e n i p s i s"])
-			await get_node("/root/room_battle/BattleBox").finished
-			monsterDialogue = "its ok^5&you tried :)"
 		_:
 			if action == "* "+data.battledata[battleId]["name"]:
 				attackappear.emit()
