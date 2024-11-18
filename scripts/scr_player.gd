@@ -25,7 +25,7 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _physics_process(_delta):
 	var inputDir = Vector2(Input.get_axis("move_left","move_right"),Input.get_axis("move_up","move_down"))
-	var targetVelocity = inputDir*50
+	var targetVelocity = inputDir*MOVE_SPEED
 	velocity = lerp(velocity,targetVelocity,0.6)
 	if inputDir == Vector2.ZERO:
 		$AnimatedSprite2D.frame = 1
