@@ -13,6 +13,7 @@ func _process(_delta):
 
 func interact():
 	battleHandler._heal(99)
-	dialogueHandler.doDialogue(dialogue)
-	await dialogueHandler.dialogueFinished
+	if dialogue:
+		dialogueHandler.doDialogue(dialogue)
+		await dialogueHandler.dialogueFinished
 	ui_save.save_ui()
