@@ -105,7 +105,7 @@ var battledata = [
 		"fake_atk":20,
 		"fake_def":20,
 		"check":"* A simple mushroom.^5&* With a face.", # check message.
-		"acts":["Check","Say Hi","telekenothing"], # acts. define these in battleHandler's "_action" function.
+		"acts":["Check","Say Hi"], # acts. define these in battleHandler's "_action" function.
 		"flavTexts":["* Smells like mushroom stew.^5&  Gross.","* Smells like mushroom stew.^5&  Delicious!"], # random texts.
 		"attacks":["mushroom","flyingmushroom"], # loads "objects/attacks/[random attack name].tscn". if attacks_in_order is true, it will play these in order. if attacks_in_order and loop_attacks is on, these will repeat.
 		"spare":false, # if you can spare the enemy at the start. example: you can spare whimsun and moldsmal instantly

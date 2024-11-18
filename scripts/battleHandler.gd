@@ -205,6 +205,11 @@ func _action(action : String):
 			else:
 				playDialogue.emit(["* "+data.battledata[battleId]["name"]+" - ATK "+str(data.battledata[battleId]["fake_atk"])+" DEF "+str(data.battledata[battleId]["fake_def"])+"&"+data.battledata[battleId]["check"]])
 			await get_node("/root/room_battle/BattleBox").finished
+		"* Say Hi":
+			canSpare = true
+			monsterDialogue = "you're my friend&now. we're having&soft tacos later!"
+			playDialogue.emit(["* You say hi to Shroomy.^5&* Shroomy says hi back.^5&* What a meaningful conversation!"])
+			await get_node("/root/room_battle/BattleBox").finished
 		"* Spare":
 			if canSpare == true:
 				get_node("/root/room_battle/Enemy").get_node("Normal").queue_free()

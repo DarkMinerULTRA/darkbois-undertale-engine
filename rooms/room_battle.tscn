@@ -1,4 +1,4 @@
-[gd_scene load_steps=53 format=3 uid="uid://tqlkx4lstqsc"]
+[gd_scene load_steps=52 format=3 uid="uid://tqlkx4lstqsc"]
 
 [ext_resource type="Script" path="res://scripts/scr_BattleDialog.gd" id="1_4dtdt"]
 [ext_resource type="Script" path="res://scripts/scr_battle.gd" id="1_57xde"]
@@ -26,7 +26,6 @@
 [ext_resource type="Script" path="res://scripts/scr_healthbar.gd" id="17_10u14"]
 [ext_resource type="Script" path="res://scripts/scr_battlesoul.gd" id="18_dimlm"]
 [ext_resource type="Script" path="res://scripts/scr_hp.gd" id="18_r6q1c"]
-[ext_resource type="PackedScene" uid="uid://bxoe1kb20wetv" path="res://objects/enemies/obj_shroomy.tscn" id="26_02xr6"]
 [ext_resource type="Texture2D" uid="uid://c16ywqxh4ryg2" path="res://assets/sprites/battle/weapons/spr_slice_o_0.png" id="27_ypt2f"]
 [ext_resource type="Texture2D" uid="uid://c1kbhlkx5fc8x" path="res://assets/sprites/battle/weapons/spr_slice_o_1.png" id="28_gtsvr"]
 [ext_resource type="Texture2D" uid="uid://bom0ew0nt5uof" path="res://assets/sprites/battle/weapons/spr_slice_o_2.png" id="29_tix2i"]
@@ -202,9 +201,6 @@ _data = {
 [node name="room_battle" type="Node2D"]
 script = ExtResource("1_57xde")
 
-[node name="Enemy" parent="." instance=ExtResource("26_02xr6")]
-position = Vector2(160, 68)
-
 [node name="AttackBox" type="StaticBody2D" parent="."]
 position = Vector2(160, 157)
 script = ExtResource("2_hsy56")
@@ -214,20 +210,20 @@ position = Vector2(0, -2)
 size = Vector2(289, 72)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AttackBox"]
-position = Vector2(-141.494, -2)
+position = Vector2(-141.5, -2)
 shape = SubResource("RectangleShape2D_38etv")
 
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="AttackBox"]
-position = Vector2(142.494, -2)
+position = Vector2(142.5, -2)
 shape = SubResource("RectangleShape2D_38etv")
 
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="AttackBox"]
-position = Vector2(-144.5, -36.0015)
+position = Vector2(-144.5, -36)
 rotation = 1.57079
 shape = SubResource("RectangleShape2D_38etv")
 
 [node name="CollisionShape2D4" type="CollisionShape2D" parent="AttackBox"]
-position = Vector2(144.5, 32.0015)
+position = Vector2(144.5, 32)
 rotation = 1.57079
 shape = SubResource("RectangleShape2D_38etv")
 
