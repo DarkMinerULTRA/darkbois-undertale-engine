@@ -12,6 +12,7 @@ func _process(_delta):
 				canInteract = true
 
 func interact():
+	battleHandler._heal(99)
 	dialogueHandler.doDialogue(dialogue)
 	await dialogueHandler.dialogueFinished
 	ui_save.save_ui()
