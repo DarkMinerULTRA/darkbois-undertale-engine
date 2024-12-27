@@ -9,3 +9,4 @@ var soulPos : Vector2
 var encountered_enemy : bool
 var steps = 0
 var encounter_steps = 0
+var next_room = ""

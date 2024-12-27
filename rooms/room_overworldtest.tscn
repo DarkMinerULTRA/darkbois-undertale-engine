@@ -21,7 +21,7 @@ clamp_2 = Vector2(0, 240)
 [node name="npc" parent="." instance=ExtResource("3_fs06r")]
 position = Vector2(244, 130)
 animationName = "shroomy"
-dialogue = Array[String](["%shroomer_normal%* I am a shroom.", "* Test dialogue.", "%shroomer_evil%* I will FIGHT you!!^5&* (as a demonstration)^5&  (nothing personal)"])
+dialogue = Array[String](["%shroomer_normal%* I am a shroom.", "* Test dialogue.", "%shroomer_evil%* I will $$FIGHT$ you!!^5&* (as a demonstration)^5&  (nothing personal)"])
 startBattle = true
 post_interact_dialogue = Array[String](["* Thank you for SPARING&  me, hooman!!", "* So, about those soft&  tacos???"])
 

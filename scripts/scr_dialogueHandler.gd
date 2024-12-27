@@ -24,8 +24,6 @@ func doDialogue(dialogue : Array,sound : String = "",wait_time : float = 0.05):
 				wait = false
 				if !skip:
 					await get_tree().create_timer(float(j)/10).timeout
-			elif j == "&":
-				$UiBox/Label.text += "\n"
 			elif j == "^":
 				wait = true
 			elif j == "%":
@@ -59,7 +57,7 @@ func doDialogue(dialogue : Array,sound : String = "",wait_time : float = 0.05):
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	visible = false # Replace with function body.
+	visible = true # Replace with function body.
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

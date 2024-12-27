@@ -10,10 +10,12 @@ func _process(_delta: float) -> void:
 		if i.name == "player" and !touched:
 			global.can_player_move = false
 			playerVariables.encountered_enemy = false
+			playerVariables.next_room = data.rooms[room_id]
 			playerVariables.steps = 0
 			touched = true
 			fade.fadeOut(0.25)
 			await get_tree().create_timer(0.25).timeout
 			playerVariables.position = room_position
 			data.savedata["curScene"] = room_id
-			get_tree().change_scene_to_file("res://rooms/"+data.rooms[room_id]+".tscn")
+			if get_tree():
+				get_tree().change_scene_to_file("res://rooms/"+data.rooms[room_id]+".tscn")
