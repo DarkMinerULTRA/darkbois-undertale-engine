@@ -9,7 +9,7 @@ func _process(_delta):
 	for i in get_children():
 		number += 1
 		letter += 1
-		if text.length() != 1:
+		if text.length() != 1 and text.length() != 0:
 			while text[number-1] == "&" or text[number-1] == "\\" or text[number-1] == "$":
 				number += 1
 		if text.length() < number or text.length() == 0 or text[number-1] != i.character:
